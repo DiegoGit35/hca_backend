@@ -1,6 +1,7 @@
 package com.andinos.hechoconamor.hca_backend.entity;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -20,12 +21,12 @@ public class Usuario {
     private Date fechaNacimiento;
     @OneToMany
     @JoinColumn(name = "idVenta")
-    private Venta venta;
+    private List<Venta> venta;
 
-    public Venta getVenta() {
+    public List<Venta> getVenta() {
         return venta;
     }
-    public void setVenta(Venta venta) {
+    public void setVenta(List<Venta> venta) {
         this.venta = venta;
     }
     public Integer getId() {
