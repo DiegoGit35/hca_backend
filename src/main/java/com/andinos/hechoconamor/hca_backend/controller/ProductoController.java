@@ -7,9 +7,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import com.andinos.hechoconamor.hca_backend.entity.Producto;
-import com.andinos.hechoconamor.hca_backend.service.IProductoService;
-
 @RestController
 @RequestMapping("/")
 public class ProductoController {
