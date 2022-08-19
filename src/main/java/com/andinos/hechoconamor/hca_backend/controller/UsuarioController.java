@@ -13,8 +13,8 @@ import com.andinos.hechoconamor.hca_backend.entity.Usuario;
 @RequestMapping("/usuario")
 public class UsuarioController {
     
-    @GetMapping
-    public List<Usuario> getUsuarios(){
+    // @GetMapping
+    // public List<Usuario> getUsuarios(){
 
-    } 
+    // } 
 }

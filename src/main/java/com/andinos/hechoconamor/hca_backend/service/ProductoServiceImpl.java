@@ -1,23 +1,32 @@
 package com.andinos.hechoconamor.hca_backend.service;
 
-import java.util.List;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
 import com.andinos.hechoconamor.hca_backend.entity.Producto;
 import com.andinos.hechoconamor.hca_backend.repository.ProductoDAO;
+import org.springframework.transaction.annotation.Transactional;
 
-@Service
+import java.util.List;
+import java.util.Set;
+
 public class ProductoServiceImpl implements IProductoService{
 
-    @Autowired
-    private ProductoDAO productoDAO;
+    private ProductoDAO productoDao;
 
-    public List<Producto> getProductos(){
-        return productoDAO.findAll();
+    @Override
+    @Transactional(readOnly = true)
+    public List<Producto> findAll() {
+        return (List<Producto>) productoDao.findAll();
     }
-    public Producto save(Producto producto){
-        return productoDAO.save(producto);
+
+
+    @Transactional
+    public Set<Producto> buscarPorNombre(String parteNombre){
+        return (Set<Producto>) productoDao.findByNombre(parteNombre);
     }
+
+    @Override
+    public Producto save(Producto producto) {
+        productoDao.save(producto);
+        return producto;
+    }
+
 }
