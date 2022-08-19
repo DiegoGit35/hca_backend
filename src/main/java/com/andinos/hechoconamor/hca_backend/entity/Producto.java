@@ -2,26 +2,25 @@ package com.andinos.hechoconamor.hca_backend.entity;
 
 import java.util.Date;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+import javax.persistence.*;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
+@Table(name="producto")
 public class Producto {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="id")
     private Integer idProducto;
 
+    @Column(name="nombre")
     private String nombre;
+    @Column(name="shortDescription")
     private String shortDescription;
+    @Column(name="fullDescription")
     private String fullDescription;
+    @Column(name="imagen")
     private String imagen;
     
     @Temporal(TemporalType.DATE)
@@ -29,9 +28,13 @@ public class Producto {
     @Column(name = "create_time")
     private Date fechaYhora;
 
+    @Column(name="porcentajeDescuento")
     private Integer PorcentajeDescuento;
+    @Column(name="largo")
     private Float largo;
+    @Column(name="ancho")
     private Float ancho;
+    @Column(name="peso")
     private Float peso;
 
     @OneToOne

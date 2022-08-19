@@ -8,6 +8,7 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 @Entity
+@Table(name="venta")
 public class Venta implements Serializable {
 
     private static final int serialVersionUID = 1;

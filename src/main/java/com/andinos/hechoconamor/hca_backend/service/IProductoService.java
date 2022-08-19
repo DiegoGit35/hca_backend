@@ -1,6 +1,7 @@
 package com.andinos.hechoconamor.hca_backend.service;
 
 import com.andinos.hechoconamor.hca_backend.entity.Producto;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 import java.util.Set;
