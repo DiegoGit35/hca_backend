@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/producto")
 public class ProductoController {
 
-
     private IProductoService productoService;
 
     @GetMapping
