@@ -1,5 +1,6 @@
 package com.andinos.hechoconamor.hca_backend.controller;
 
+import com.andinos.hechoconamor.hca_backend.entity.Producto;
 import com.andinos.hechoconamor.hca_backend.service.IProductoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -22,5 +23,10 @@ public class ProductoController {
     @RequestMapping(value = "busqueda/{busqueda}", method = RequestMethod.GET)
     public ResponseEntity<?> getProductoPorNombre(@PathVariable(value = "busqueda") String busqueda) {
         return new ResponseEntity<>(productoService.buscarPorNombre(busqueda), HttpStatus.FOUND);
+    }
+
+    @PostMapping
+    public ResponseEntity<Producto> save(@RequestBody Producto producto) {
+        return new ResponseEntity<>(productoService.save(producto), HttpStatus.ACCEPTED);
     }
 }

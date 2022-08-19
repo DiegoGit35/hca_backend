@@ -23,4 +23,10 @@ public class ProductoServiceImpl implements IProductoService{
         return (Set<Producto>) productoDao.findByNombre(parteNombre);
     }
 
+    @Override
+    public Producto save(Producto producto) {
+        productoDao.save(producto);
+        return producto;
+    }
+
 }

@@ -9,4 +9,6 @@ public interface IProductoService {
 
     public List<Producto> findAll();
     public Set<Producto> buscarPorNombre(String parteNombre);
+
+    public Producto save(Producto producto);
 }
